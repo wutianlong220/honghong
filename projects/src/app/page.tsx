@@ -441,9 +441,9 @@ export default function Home() {
           <div className="flex items-center justify-between mb-2">
             <div className="w-48 flex-shrink-0" /> {/* 占位符 */}
             <h1 className="text-4xl font-bold text-pink-600 dark:text-pink-400 flex items-center gap-2">
-              <Heart className="w-10 h-10" />
+              <span className="text-6xl">🏹</span>
               哄哄模拟器
-              <Heart className="w-10 h-10" />
+              <span className="text-6xl">🏹</span>
             </h1>
             <div className="w-48 flex justify-end flex-shrink-0">
               <UserMenu />
