@@ -128,7 +128,7 @@ export default function ProfilePage() {
             </Card>
             <Card>
               <CardContent className="pt-6 text-center">
-                <BarChart3 className="w-8 h-8 text-blue-500 mx-auto mb-2" />
+                <BarChart3 className="w-8 h-8 text-yellow-500 mx-auto mb-2" />
                 <div className="text-2xl font-bold text-gray-900">{stats.avgScore}</div>
                 <div className="text-sm text-gray-500">平均好感度</div>
               </CardContent>

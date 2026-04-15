@@ -616,7 +616,7 @@ export default function Home() {
                       <div 
                         className={`max-w-[80%] p-3 rounded-lg ${
                           msg.role === 'user' 
-                            ? 'bg-blue-500 text-white' 
+                            ? 'bg-yellow-500 text-white' 
                             : 'bg-pink-100 dark:bg-pink-900/30 text-gray-800 dark:text-gray-200'
                         }`}
                       >
