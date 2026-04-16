@@ -9,6 +9,7 @@ import { scenarios, girlfriendTypes, type Scenario, type GirlfriendType } from '
 import { Mic, MicOff, Play, RotateCcw, Volume2, VolumeX, Heart, MessageCircle, BookOpen, Trophy, Image as ImageIcon, X } from 'lucide-react';
 import Link from 'next/link';
 import UserMenu from '@/components/UserMenu';
+import { GlowingEffect } from '@/components/GlowingEffect';
 
 type GamePhase = 'intro' | 'select-scenario' | 'select-girlfriend' | 'playing' | 'result';
 
@@ -506,25 +507,33 @@ export default function Home() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {scenarios.map((scenario) => (
-                <Card 
-                  key={scenario.id}
-                  className="cursor-pointer hover:border-pink-400 transition-all hover:shadow-lg"
-                  onClick={() => selectScenario(scenario)}
-                >
-                  <CardHeader>
-                    <div className="flex items-center justify-between">
-                      <CardTitle className="text-lg">{scenario.title}</CardTitle>
-                      <Badge className={getDifficultyColor(scenario.difficulty)}>
-                        {getDifficultyText(scenario.difficulty)}
-                      </Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      {scenario.description}
-                    </p>
-                  </CardContent>
-                </Card>
+                <div key={scenario.id} className="relative rounded-xl">
+                  <GlowingEffect
+                    glow
+                    blur={0}
+                    spread={15}
+                    movementDuration={1.5}
+                    borderWidth={1.5}
+                  />
+                  <Card
+                    className="cursor-pointer transition-all relative overflow-hidden"
+                    onClick={() => selectScenario(scenario)}
+                  >
+                    <CardHeader>
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-lg">{scenario.title}</CardTitle>
+                        <Badge className={getDifficultyColor(scenario.difficulty)}>
+                          {getDifficultyText(scenario.difficulty)}
+                        </Badge>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        {scenario.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
               ))}
             </div>
             <Button 
