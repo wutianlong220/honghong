@@ -57,10 +57,14 @@ export default async function BlogPage() {
                   {post.read_time}
                 </span>
                 <span>
-                  {formatDistanceToNow(new Date(post.created_at), {
-                    addSuffix: true,
-                    locale: zhCN,
-                  })}
+                  {(() => {
+                    const date = new Date(post.created_at);
+                    if (isNaN(date.getTime())) return '未知时间';
+                    return formatDistanceToNow(date, {
+                      addSuffix: true,
+                      locale: zhCN,
+                    });
+                  })()}
                 </span>
               </div>
               <div className="flex gap-2 mt-3">

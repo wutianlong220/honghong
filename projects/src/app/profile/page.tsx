@@ -60,6 +60,7 @@ export default function ProfilePage() {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
+    if (isNaN(date.getTime())) return '未知时间';
     return date.toLocaleDateString('zh-CN', {
       year: 'numeric',
       month: '2-digit',

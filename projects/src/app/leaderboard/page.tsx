@@ -53,6 +53,7 @@ export default function LeaderboardPage() {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
+    if (isNaN(date.getTime())) return '未知时间';
     return date.toLocaleDateString('zh-CN', {
       month: '2-digit',
       day: '2-digit',
