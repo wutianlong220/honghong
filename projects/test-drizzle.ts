@@ -1,6 +1,7 @@
 import { drizzle } from 'drizzle-orm/node-postgres';
 import { Pool } from 'pg';
 import { users } from './src/storage/database/shared/schema';
+import { eq } from 'drizzle-orm';
 import * as dotenv from 'dotenv';
 
 dotenv.config({ path: '.env.local' });
@@ -41,12 +42,12 @@ async function test() {
 
     // 2. 清理
     if (result[0]?.id) {
-      await db.delete(users).where(users.id.eq(result[0].id));
+      await db.delete(users).where(eq(users.id, result[0].id));
       console.log('\n2. 清理完成');
     }
 
   } catch (err) {
-    console.error('错误:', err.message);
+    console.error('错误:', err instanceof Error ? err.message : err);
   } finally {
     await pool.end();
     process.exit(0);

@@ -54,11 +54,11 @@ export default async function BlogPage() {
                 </span>
                 <span className="flex items-center gap-1">
                   <Clock className="w-4 h-4" />
-                  {post.read_time}
+                  {post.readTime}
                 </span>
                 <span>
                   {(() => {
-                    const date = new Date(post.created_at);
+                    const date = new Date(post.createdAt);
                     if (isNaN(date.getTime())) return '未知时间';
                     return formatDistanceToNow(date, {
                       addSuffix: true,

@@ -36,7 +36,7 @@ async function test() {
 
     client.release();
   } catch (err) {
-    console.error('错误:', err.message);
+    console.error('错误:', err instanceof Error ? err.message : err);
   } finally {
     await pool.end();
     process.exit(0);

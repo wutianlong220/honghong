@@ -51,7 +51,7 @@ async function test() {
     console.log('\n3. 测试数据已清理');
 
   } catch (err) {
-    console.error('错误:', err.message);
+    console.error('错误:', err instanceof Error ? err.message : err);
   } finally {
     client.release();
     await pool.end();

@@ -50,12 +50,12 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
             </span>
             <span className="flex items-center gap-1">
               <Clock className="w-4 h-4" />
-              {post.read_time}
+              {post.readTime}
             </span>
             <span className="flex items-center gap-1">
               <Calendar className="w-4 h-4" />
               {(() => {
-                const date = new Date(post.created_at);
+                const date = new Date(post.createdAt);
                 if (isNaN(date.getTime())) return '未知时间';
                 return format(date, 'yyyy年MM月dd日', { locale: zhCN });
               })()}
@@ -156,7 +156,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
           </Link>
           <span className="text-sm text-gray-500">
             发布于 {(() => {
-              const date = new Date(post.created_at);
+              const date = new Date(post.createdAt);
               if (isNaN(date.getTime())) return '未知时间';
               return formatDistanceToNow(date, { addSuffix: true, locale: zhCN });
             })()}

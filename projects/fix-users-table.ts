@@ -75,7 +75,7 @@ async function fix() {
     console.log('现在可以重新注册用户了！');
 
   } catch (err) {
-    console.error('错误:', err.message);
+    console.error('错误:', err instanceof Error ? err.message : err);
   } finally {
     client.release();
     await pool.end();

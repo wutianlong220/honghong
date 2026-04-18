@@ -23,7 +23,7 @@ async function check() {
     });
 
   } catch (err) {
-    console.error('错误:', err.message);
+    console.error('错误:', err instanceof Error ? err.message : err);
   } finally {
     client.release();
     await pool.end();

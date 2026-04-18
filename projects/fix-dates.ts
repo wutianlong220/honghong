@@ -44,7 +44,7 @@ async function fixDates() {
     console.log(`\n完成！成功修复 ${fixed} 条记录`);
 
   } catch (err) {
-    console.error('错误:', err.message);
+    console.error('错误:', err instanceof Error ? err.message : err);
   } finally {
     client.release();
     await pool.end();

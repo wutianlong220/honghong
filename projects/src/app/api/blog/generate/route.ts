@@ -131,7 +131,7 @@ export async function POST(request: NextRequest) {
       content: articleContent,
       author: 'AI恋爱专家',
       tags: [topic, '恋爱技巧'],
-      read_time: readTime,
+      readTime: readTime,
     });
 
     return NextResponse.json({

@@ -34,7 +34,7 @@ async function check() {
     console.log('更新后值:', result2.rows[0].created_at);
 
   } catch (err) {
-    console.error('错误:', err.message);
+    console.error('错误:', err instanceof Error ? err.message : err);
   } finally {
     client.release();
     await pool.end();
