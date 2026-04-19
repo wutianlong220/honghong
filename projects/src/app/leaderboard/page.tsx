@@ -182,7 +182,7 @@ export default function LeaderboardPage() {
 
         {/* 提示 */}
         <div className="text-center mt-6 text-sm text-gray-500">
-          <p>只有登录用户的成绩才会出现在排行榜上</p>
+          <p>只有登录用户的成绩才会出现在排行榜上呦</p>
           {currentUserId && (
             <p className="text-pink-500 mt-1">你的记录已高亮显示</p>
           )}
