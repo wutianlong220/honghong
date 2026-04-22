@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { LLMClient, Config, HeaderUtils } from 'coze-coding-dev-sdk';
 import { createPost } from '@/lib/blog-service';
 
+export const runtime = 'nodejs';
+
+
 // 文章主题类型
 const ARTICLE_TOPICS = [
   '恋爱沟通技巧',

@@ -13,6 +13,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // 将数据库相关包标记为外部包，避免在构建时尝试预渲染
+  serverExternalPackages: ['pg', '@supabase/supabase-js', 'drizzle-orm', 'bcrypt'],
 };
 
 export default nextConfig;

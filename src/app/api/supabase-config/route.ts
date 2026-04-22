@@ -1,7 +1,10 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { getSupabaseCredentials } from '@/storage/database/supabase-client';
 
-export async function GET() {
+export const runtime = 'nodejs';
+
+
+export async function GET(request: NextRequest) {
   try {
     const { url, anonKey } = getSupabaseCredentials();
 

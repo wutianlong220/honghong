@@ -1,9 +1,12 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/storage/database/drizzle';
 import { gameRecords, users } from '@/storage/database/shared/schema';
 import { desc, eq } from 'drizzle-orm';
 
-export async function GET() {
+export const runtime = 'nodejs';
+
+
+export async function GET(request: NextRequest) {
   try {
     // 获取所有游戏记录，连同用户名一起获取
     const records = await db

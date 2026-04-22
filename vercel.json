@@ -1,0 +1,7 @@
+{
+  "buildCommand": "DATABASE_URL=\"postgresql://fake:fake@localhost:5432/fake\" pnpm build",
+  "outputDirectory": ".next",
+  "installCommand": "pnpm install",
+  "framework": "nextjs",
+  "nodeVersion": "20.x"
+}

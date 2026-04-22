@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getGameRecordsByUserId, getUserGameStats } from '@/lib/game-record-service';
 import { getSession } from '@/lib/session';
 
+export const runtime = 'nodejs';
+
+
 export async function GET(request: NextRequest) {
   try {
     const session = await getSession();

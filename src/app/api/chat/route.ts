@@ -131,7 +131,7 @@ ${scenario.description}
     angerChange = Math.round(angerChange * multiplier);
 
     // 计算新的生气值
-    let newAnger = Math.max(0, Math.min(100, currentAnger + angerChange));
+    const newAnger = Math.max(0, Math.min(100, currentAnger + angerChange));
 
     // 添加助手回应到历史
     history.push({ role: 'assistant', content: fullResponse });

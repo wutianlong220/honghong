@@ -5,6 +5,7 @@ import { ArrowLeft, Clock, User } from 'lucide-react';
 import { getAllPosts } from '@/lib/blog-service';
 import BlogActions from '@/components/BlogActions';
 
+
 export default async function BlogPage() {
   const posts = await getAllPosts().catch(() => []);
   

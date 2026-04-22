@@ -1,8 +1,11 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { getAllPosts } from '@/lib/blog-service';
 
+export const runtime = 'nodejs';
+
+
 // 获取所有博客文章
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
     const posts = await getAllPosts();
     return NextResponse.json({

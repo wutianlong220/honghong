@@ -1,5 +1,8 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { createPosts } from '@/lib/blog-service';
+
+export const runtime = 'nodejs';
+
 
 // 初始文章数据
 const initialPosts = [
@@ -297,7 +300,7 @@ const initialPosts = [
 ];
 
 // 迁移文章到数据库
-export async function POST() {
+export async function POST(request: NextRequest) {
   try {
     await createPosts(initialPosts);
     return NextResponse.json({

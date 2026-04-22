@@ -1,5 +1,6 @@
 import { Pool } from 'pg';
 import * as dotenv from 'dotenv';
+import bcrypt from 'bcrypt';
 
 dotenv.config({ path: '.env.local' });
 
@@ -58,7 +59,6 @@ async function fix() {
 
     // 5. 测试插入
     console.log('\n5. 测试插入...');
-    const bcrypt = require('bcrypt');
     const hashedPassword = await bcrypt.hash('test123', 10);
     const testResult = await client.query(
       `INSERT INTO users (username, password) VALUES ($1, $2) RETURNING id, username, created_at`,

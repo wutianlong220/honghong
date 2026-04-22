@@ -1,5 +1,6 @@
 import { Pool } from 'pg';
 import * as dotenv from 'dotenv';
+import bcrypt from 'bcrypt';
 
 dotenv.config({ path: '.env.local' });
 
@@ -25,7 +26,6 @@ async function test() {
 
     // 2. 注册新用户
     console.log('1. 注册新用户 testlogin123...');
-    const bcrypt = require('bcrypt');
     const hashedPassword = await bcrypt.hash('testpass123', 10);
 
     const insertResult = await client.query(
